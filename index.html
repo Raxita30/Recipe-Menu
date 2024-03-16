@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Recipe</title>
+    <!-- favicon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+      /* Add your CSS styles here */
+      .recipe-img {
+        display: none;
+        max-width: 100%;
+        height: auto;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./assets/logo.svg" alt="simply recipes " />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link"> home </a>
+          <a href="about.html" class="nav-link"> about </a>
+          <a href="tags.html" class="nav-link"> tags </a>
+          <a href="recipes.html" class="nav-link"> recipes </a>
+
+          <div class="nav-link contact-link">
+            <a href="contact.html" class="btn"> contact </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+    <!-- main -->
+    <main class="page">
+      <!-- header -->
+      <header class="hero">
+        <div class="hero-container">
+          <div class="hero-text">
+            <h1>simply recipes<span></span></h1>
+            <h1>no fluff, just recipes<span></span></h1>
+          </div>
+        </div>
+      </header>
+      <div class="rec" style="color: white;">
+        <h4>recipes</h4>
+      </div>
+      <div class="tags-container">
+          
+        <div class="tags-list">
+          <ol>
+          <li><a href="#r1">Carne Asada</a></li>
+          <li><a href="#r2">Greek Ribs</a></li>
+          <li><a href="#r3">Vegetable Soup </a></li>
+          <li><a href="#r4">Banana Pancakes </a></li>
+        </ol>
+         </div>
+      </div>
+      <!-- end of header -->
+     
+    </main>
+
+    <main class="page">
+      <div class="featured-recipes">
+      
+       <!-- recipes list -->
+        <div class="recipes-list">
+          <!-- single recipe -->
+          <section id="r1">
+          <a href="single-recipe.html" class="recipe">
+            <h3>Carne Asada</h3>
+            <img
+              src="./assets/recipes/recipe-1.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Carne Asada</h5>
+            <p>Prep : 15min | Cook : 5min</p>
+          </a>
+        </section>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <section id="r2">
+          <a href="single-recipe.html" class="recipe">
+            <h3>Greek Ribs</h3>
+            <img
+              src="./assets/recipes/recipe-2.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Greek Ribs</h5>
+            <p>Prep : 15min | Cook : 5min</p>
+          </a>
+        </section>
+
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          
+          <section id="r3">
+          <a href="single-recipe.html" class="recipe">
+            <h3>Vegetable Soup</h3>
+            <img
+              src="./assets/recipes/recipe-3.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Vegetable Soup</h5>
+            <p>Prep : 15min | Cook : 5min</p>
+          </a>
+        </section>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+
+          <section id="r4">
+          <a href="single-recipe.html" class="recipe">
+            <h3>Banana Pancakes</h3>
+            <img
+              src="./assets/recipes/recipe-4.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Banana Pancakes</h5>
+            <p>Prep : 15min | Cook : 5min</p>
+          </a>
+        </section>
+
+          <!-- end of single recipe -->
+        </div>
+        <!-- end of recipe list -->
+      </div>
+          
+    </main>
+    
+    
+    <!-- end of main -->
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+        &copy; <span id="date"></span>
+        <span class="footer-logo">SimplyRecipes</span> Built by
+        <a href="https://www.johnsmilga.com/">Coding Addict</a>
+      </p>
+    </footer>
+    <script src="./js/app.js"></script>
+
+    <script>
+         // JavaScript function to display images one by one
+    document.addEventListener("DOMContentLoaded", function() {
+      var recipeImages = document.querySelectorAll(".recipe-img");
+      var index = 0;
+      
+      function displayImage() {
+        if (index < recipeImages.length) {
+          recipeImages[index].style.display = "block";
+          index++;
+          setTimeout(displayImage, 1000); // Adjust the delay (in milliseconds) between each image display
+        }
+      }
+      
+      displayImage();
+    });
+  </script>
+  </body>
+</html>
